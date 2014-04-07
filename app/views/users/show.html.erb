@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Username:</strong>
+  <%= @user.username %>
+</p>
+
+<p>
+  <strong>Profile Picture:</strong>
+  <%= @user.image %>
+</p>
+
+<p>
+  <strong>Twitter:</strong>
+  <%= @user.twitter %>
+</p>
+
+<p>
+  <strong>Github:</strong>
+  <%= @user.github %>
+</p>
+
+<p>
+  <strong>Member Since:</strong>
+  <%= @user.member_since %>
+</p>
+
+<p>
+  <strong>Recent Articles:</strong>
+  <%= @user.articles_title %>
+</p>
+
+<p>
+  <strong>Total Articles:</strong>
+  <%= @user.total_articles %>
+</p>
+
+
+<%= link_to 'Edit', edit_user_path(@user) %> |
+<%= link_to 'Back', users_path %>

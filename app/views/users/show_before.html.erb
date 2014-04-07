@@ -1,0 +1,51 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Username:</strong>
+  <%= [@user.first_name , @user.last_name].join(' ').capitalize %>
+</p>
+
+<p>
+  <strong>Profile Picture:</strong>
+  <% if  @user.profile_picture.empty? %>
+     <%= @user.gender == "male" ? image_tag("http://www.clker.com/cliparts/c/4/0/e/1197115544208915882acspike_male_user_icon.svg.med.png", height: '32', width: '32') ? image_tag("http://www.clker.com/cliparts/c/4/0/e/1197115544208915882acspike_male_user_icon.svg.med.png", height: '32', width: '32') %>
+  <% else %>
+    <%= @user.profile_picture %>
+  <% end %>
+</p>
+
+<p>
+  <strong>Twitter:</strong>
+  <% if @user.twitter_name.present? %>
+    <%= link_to @user.twitter_name , "http://twitter.com/#{@user.twitter_name}" %>
+  <% else %>
+    None Given
+  <% end %>
+</p>
+
+<p>
+  <strong>Github:</strong>
+  <% if @user.github.present? %>
+    <%= link_to @user.github_name , "http://github.com/#{@user.githu_name}" %>
+  <% else %>
+    None Given
+  <% end %>
+</p>
+
+<p>
+  <strong>Member Since:</strong>
+  <%= @user.created_at.strftime("%B %e, %Y") %>
+</p>
+
+<p>
+  <strong>Recent Articles:</strong>
+  <%= @user.articles.map(&:title) %>
+</p>
+
+<p>
+  <strong>Total Articles:</strong>
+  <%= @user.articles.length %>
+</p>
+
+<%= link_to 'Edit', edit_user_path(@user) %> |
+<%= link_to 'Back', users_path %>
