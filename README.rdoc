@@ -1,1 +1,2 @@
-Rails4 application wit draper gem.
+Rails4 application with draper gem.
+Please see ppt at http://www.slideshare.net/spritle/sprite-xchange-drapervisnupriyaapril7spritle.
